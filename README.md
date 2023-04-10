@@ -1,0 +1,1 @@
+# AirCompressor_anomaly_detection_AIFACTORY

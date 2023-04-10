@@ -1,6 +1,7 @@
 # AirCompressor_anomaly_detection_AIFACTORY
 https://aifactory.space/competition/detail/2226
 
+- Airflow를 이용하여 ETL 파이프라인 구성 후, WandB로 모델링 모니터링.
 - 참가 팀명: 신길동토니스타크
 - 대회 종료 후 업로드
 

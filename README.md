@@ -1,4 +1,5 @@
 # AirCompressor_anomaly_detection_AIFACTORY
+https://aifactory.space/competition/detail/2226
 
 - 대회 종료 후 업로드
 

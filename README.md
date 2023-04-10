@@ -1,6 +1,7 @@
 # AirCompressor_anomaly_detection_AIFACTORY
 https://aifactory.space/competition/detail/2226
 
+- 참가 팀명: 신길동토니스타크
 - 대회 종료 후 업로드
 
 **대회 주제**\

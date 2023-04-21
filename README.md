@@ -3,7 +3,8 @@ https://aifactory.space/competition/detail/2226
 
 - Airflow를 이용하여 ETL 파이프라인 구성 후, WandB로 모델링 모니터링.
 - 참가 팀명: 신길동토니스타크
-- 대회 종료 후 업로드
+- Total: 0.956
+- 총 803명의 참가자 중, 공동 **22등** 달성.
 
 <br>
 

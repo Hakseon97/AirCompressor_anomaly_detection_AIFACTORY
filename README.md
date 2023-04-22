@@ -7,6 +7,8 @@ https://aifactory.space/competition/detail/2226
 - 총 803명의 참가자 중, 공동 **22등** 달성.
 
 <br>
+<br>
+<hr>
 
 **대회 주제**\
 ■ 범천(주)은 ESG 가치를 담아 산업용 공기압축기를 개발하는 대덕연구개발특구 소재 기업입니다.
@@ -47,3 +49,95 @@ type: 설비 번호
 설비 번호 1: 20HP   
 설비 번호 2: 10HP   
 설비 번호 3: 50HP   
+<hr>
+
+<h2> EDA 요약 </h2>
+<br>
+<h3> train dataset에 대한 pair plot </h3>
+
+![image](./train_pairplot.png)
+
+<br>
+<h3> test dataset에 대한 pair plot </h3>
+
+![image](./test_pairplot.png)
+
+- train셋은 모두 정상이며, 타입별로 선형 기울기가 다름.
+- motor_vibe 컬럼에서의 이상치 제거 필요.
+
+<br>
+<h3> 타입별 heatmap </h3>
+
+![image](./30hp_heatmap.png)
+
+- 마력별로 구분했을 때, 변수들간의 상관관계가 모두 1을 나타냄.
+
+<br>
+<h3> 타입별 추이 </h3>
+
+![image](./30hp_graph.png)
+
+- 스케일링 진행.
+
+<hr>
+<h2> Preprocessing </h2>
+
+1. Type을 마력별로 정리.
+
+2. Scaling
+
+    ![image](./graph_for_pt/train_10hp.png)
+    ![image](./graph_for_pt/test_10hp.png)
+    <hr>
+
+    ![image](./graph_for_pt/train_20hp.png)
+    ![image](./graph_for_pt/test_20hp.png)
+    <hr>
+    
+    ![image](./graph_for_pt/train_30hp.png)
+    ![image](./graph_for_pt/test_30hp.png)
+    <hr>
+
+    ![image](./graph_for_pt/train_50hp.png)
+    ![image](./graph_for_pt/test_50hp.png)
+
+- 이상치의 경우, 컬럼 중 값이 튀는 부분이 존재.
+- 이를 모든 데이터에 대해 캐치하기 위해 normalization 진행.
+<br>
+3. **Normalization**
+
+- 이웃 컬럼에 대한 기울기를 구하여 일반화 진행.
+- 마지막 컬럼에 out_pressure 컬럼을 추가함으로써, 모든 타입을 하나로 통합할 수 있음.
+
+    ![image](./graph_for_pt/diff_train_10hp.png)
+    ![image](./graph_for_pt/diff_test_10hp.png)
+    <hr>
+
+    ![image](./graph_for_pt/diff_train_20hp.png)
+    ![image](./graph_for_pt/diff_test_20hp.png)
+    <hr>
+
+    ![image](./graph_for_pt/diff_train_30hp.png)
+    ![image](./graph_for_pt/diff_test_30hp.png)
+    <hr>
+
+    ![image](./graph_for_pt/diff_train_50hp.png)
+    ![image](./graph_for_pt/diff_test_50hp.png)
+
+<h2> 모델링 결과 </h2>
+- 각 모델링은 각각의 ipynb 파일 참조.
+
+![image](./3d_plot_train_test.gif)
+
+- train -> 청색
+- test -> 적색
+
+<h2> Airflow </h2>
+
+- version 1
+    ![image](./graph_for_pt/Screenshot%20from%202023-04-22%2011-54-28.png)
+
+- version 2
+    ![image](./graph_for_pt/Screenshot%20from%202023-04-22%2011-55-09.png)
+
+    - AutoEncoder + DeepSVDD + 다른 모델링을 병렬로 처리했으면 좋았겠지만, 다른 개인적인 스케쥴로 인해 진행안함.

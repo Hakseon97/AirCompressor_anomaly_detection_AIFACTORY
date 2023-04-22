@@ -6,6 +6,8 @@ https://aifactory.space/competition/detail/2226
 - F1 Score: 0.956 (Private)
 - 총 803명의 참가자 중, 공동 **22등** 달성.
 
+![image](./score.png)
+
 <br>
 <br>
 <hr>

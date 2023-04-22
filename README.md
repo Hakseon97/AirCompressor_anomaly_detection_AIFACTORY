@@ -104,7 +104,7 @@ type: 설비 번호
 - 이상치의 경우, 컬럼 중 값이 튀는 부분이 존재.
 - 이를 모든 데이터에 대해 캐치하기 위해 normalization 진행.
 <br>
-3. **Normalization**
+3. Normalization
 
 - 이웃 컬럼에 대한 기울기를 구하여 일반화 진행.
 - 마지막 컬럼에 out_pressure 컬럼을 추가함으로써, 모든 타입을 하나로 통합할 수 있음.
